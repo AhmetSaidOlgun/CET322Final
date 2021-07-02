@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CET322Final", "CET322Final\CET322Final.csproj", "{F2A97C79-A6EC-46E1-965C-65BB7448E6DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2A97C79-A6EC-46E1-965C-65BB7448E6DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2A97C79-A6EC-46E1-965C-65BB7448E6DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2A97C79-A6EC-46E1-965C-65BB7448E6DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2A97C79-A6EC-46E1-965C-65BB7448E6DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE8E8E56-BD8C-4CE8-9EB1-390C669BDDF1}
+	EndGlobalSection
+EndGlobal
