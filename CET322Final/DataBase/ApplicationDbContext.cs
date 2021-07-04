@@ -15,5 +15,7 @@ namespace CET322Final.DataBase
         }
 
         public DbSet<CAtegory> Category { get; set; }
+        public DbSet<ApplicationType> ApplicationType { get; set; }
+  
     }
 }
