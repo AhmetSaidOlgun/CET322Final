@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace CET322Final.Controllers
 {
+  
+
     public class ApplicationTypeController : Controller
     {
 
@@ -19,13 +21,13 @@ namespace CET322Final.Controllers
         }
         public IActionResult Index()
         {
-            IEnumerable<ApplicationType> objList = (IEnumerable<ApplicationType>)_db.ApplicationType;
+            IEnumerable<ApplicationType> objList = _db.ApplicationType;
             return View(objList);
         }
         //Get Create
         public IActionResult Create()
         {
-           
+
             return View();
         }
 
@@ -33,9 +35,75 @@ namespace CET322Final.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(ApplicationType obj)
         {
-            _db.ApplicationType.Add(obj);
+            if (ModelState.IsValid)
+            {
+                _db.ApplicationType.Add(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(obj);
+
+
+        }
+        //Get-Edit
+        public IActionResult Edit(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var obj = _db.ApplicationType.Find(id);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            return View(obj);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(ApplicationType obj)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.ApplicationType.Update(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(obj);
+
+
+        }
+        //Delete
+        public IActionResult Delete(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var obj = _db.ApplicationType.Find(id);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            return View(obj);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeletePost(int? id)
+        {
+            var obj = _db.ApplicationType.Find(id);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            _db.ApplicationType.Remove(obj);
             _db.SaveChanges();
             return RedirectToAction("Index");
+
         }
     }
 }
